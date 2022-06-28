@@ -10,14 +10,17 @@ namespace LrSkin.Controls
 {
     public class LrSkinButton: Button
     {
-        private int _edgeRadius;
-
-        /// <summary>
-        /// Representa o raio da borda do controle.
-        /// </summary>
-        [DefaultValue(true)]
-        [Category("LR Skin")]
-        public int EdgeRadius { get; set; }
+        private float _edgeRadius;
+        [DefaultValue(4), Category("LR Skin"), Description("Representa o raio da borda do controle")]
+        public float EdgeRadius 
+        { 
+            get => _edgeRadius;
+            set
+            {
+                _edgeRadius = value;
+                Invalidate();
+            }
+        }
 
 
 
